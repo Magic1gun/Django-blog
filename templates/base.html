@@ -1,0 +1,61 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Django central</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <!-- 顶部导航栏 -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm">
+        <a class="navbar-brand font-weight-bold" href="#">Django central</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item"><a class="nav-link" href="#">About</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Policy</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+    <!-- 蓝色横幅 -->
+    <header class="masthead text-white text-center py-4 mb-4">
+        <div class="container">
+            <h2 class="mb-2">Welcome to my awesome Blog</h2>
+            <p class="lead mb-0">We Love Django As much as you do .!</p>
+        </div>
+    </header>
+    <!-- 主内容区 -->
+    <div class="container mb-5">
+        <div class="d-flex justify-content-between align-items-start flex-wrap">
+            <div style="flex:1 1 0; min-width:0; max-width:66%;">
+                {% if messages %}
+                <div class="messages" style="margin-top: 20px;">
+                    {% for message in messages %}
+                    <div class="alert alert-{{ message.tags }}" role="alert">
+                        {{ message }}
+                    </div>
+                    {% endfor %}
+                </div>
+                {% endif %}
+                {% block content %}{% endblock %}
+            </div>
+            <div style="width:340px; margin-left:24px;">
+                {% block sidebar %}{% include 'sidebar.html' %}{% endblock %}
+            </div>
+        </div>
+    </div>
+    <footer class="py-3 bg-light border-top">
+        <p class="m-0 text-dark text-center">版权 &copy; Django Central</p>
+    </footer>
+</body>
+</html>
+
+
+

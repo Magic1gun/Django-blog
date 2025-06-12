@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% load cache %}
+
+{% block content %}
+<div class="container mt-4">
+    <h2>缓存示例</h2>
+    
+    <!-- 使用模板标签缓存整个块 -->
+    {% cache 300 cache_block %}
+    <div class="card mb-4">
+        <div class="card-body">
+            <h5 class="card-title">缓存块示例</h5>
+            <p class="card-text">这个块被缓存了5分钟</p>
+            <p>当前时间: {{ current_time }}</p>
+        </div>
+    </div>
+    {% endcache %}
+    
+    <!-- 未缓存的内容 -->
+    <div class="card">
+        <div class="card-body">
+            <h5 class="card-title">未缓存的内容</h5>
+            <p class="card-text">这个内容每次都会更新</p>
+            <p>当前时间: {{ current_time }}</p>
+            <p>缓存数据: {{ cached_data }}</p>
+        </div>
+    </div>
+</div>
+{% endblock %} 

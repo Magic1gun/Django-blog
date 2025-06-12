@@ -1,0 +1,102 @@
+body {
+    font-family: "Roboto", sans-serif;
+    font-size: 17px;
+    background-color: #fdfdfd;
+}
+
+.navbar {
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+}
+
+.shadow {
+    box-shadow: 0 4px 2px -2px rgba(0, 0, 0, 0.1);
+}
+
+.btn-danger, .btn-primary {
+    border-radius: 4px;
+    font-weight: 500;
+    padding: 0.4rem 1.2rem;
+    font-size: 1rem;
+}
+
+.btn-danger {
+    background-color: #f00000;
+    border-color: #dc281e;
+}
+
+.btn-primary {
+    background-color: #2196f3;
+    border-color: #2196f3;
+}
+
+.masthead {
+    background: #2196f3;
+    color: #fff;
+    box-shadow: 0 4px 24px #E3E7EB;
+    border-radius: 0 0 4px 4px;
+}
+
+.card {
+    box-shadow: 0 4px 24px #E3E7EB;
+    border: none;
+    border-radius: 8px;
+    margin-bottom: 2rem;
+}
+
+.sidebar .card {
+    margin-bottom: 0;
+}
+
+@media (max-width: 767px) {
+    .masthead h2 { font-size: 1.3rem; }
+    .container { padding: 0 10px; }
+}
+
+.about-card {
+    box-shadow: 0 4px 24px #E3E7EB !important;
+    border: none !important;
+    border-radius: 8px !important;
+    margin-bottom: 2rem !important;
+    width: 100% !important;
+    min-width: 0 !important;
+    background: #fff !important;
+}
+
+.about-header {
+    background: #f8f9fa !important;
+    border-bottom: 1px solid #eee !important;
+    font-weight: bold !important;
+    font-size: 1.1rem !important;
+    text-align: left !important;
+    padding: 0.7rem 1.25rem !important;
+}
+
+.about-card .card-body {
+    padding: 1.1rem 1.25rem 1.1rem 1.25rem !important;
+}
+
+.about-text {
+    font-size: 15px !important;
+    color: #333 !important;
+    margin-bottom: 1rem !important;
+    line-height: 1.6 !important;
+    word-break: break-word !important;
+}
+
+.about-btn {
+    padding: 0.3rem 1.1rem !important;
+    font-size: 0.95rem !important;
+    border-radius: 4px !important;
+    font-weight: 500 !important;
+    background-color: #f00000 !important;
+    border-color: #dc281e !important;
+    color: #fff !important;
+    box-shadow: none !important;
+}
+
+@media (max-width: 991.98px) {
+    .about-card {
+        margin-top: 2rem !important;
+        width: 100% !important;
+    }
+}

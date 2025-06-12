@@ -1,0 +1,36 @@
+{% extends "blog/base.html" %}
+{% block content %}
+
+<div class="container py-5">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card">
+                <div class="card-header bg-danger text-white">
+                    <h4 class="mb-0">注销账户</h4>
+                </div>
+                <div class="card-body">
+                    <div class="alert alert-warning">
+                        <h5>警告！</h5>
+                        <p>您确定要注销您的账户吗？此操作将：</p>
+                        <ul>
+                            <li>永久删除您的账户</li>
+                            <li>删除所有与您账户相关的数据</li>
+                            <li>此操作无法撤销</li>
+                        </ul>
+                    </div>
+                    <form method="POST">
+                        {% csrf_token %}
+                        <div class="form-group">
+                            <label for="confirm">请输入"确认注销"以确认：</label>
+                            <input type="text" class="form-control" id="confirm" name="confirm" required>
+                        </div>
+                        <button type="submit" class="btn btn-danger">确认注销</button>
+                        <a href="{% url 'blog:home' %}" class="btn btn-secondary">取消</a>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %} 

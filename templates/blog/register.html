@@ -1,0 +1,14 @@
+{% extends "blog/base.html" %}
+{% block content %}
+{% load crispy_forms_tags %}
+<!--Register-->
+<div class="container py-5">
+    <h1>注册</h1>
+    <form method="POST">
+        {% csrf_token %}
+        {{ register_form|crispy }}
+        <button class="btn btn-primary" type="submit">注册</button>
+    </form>
+    <p class="text-center">如果您已有账号，请<a href="/login">登录</a></p>
+</div>
+{% endblock %} 
